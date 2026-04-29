@@ -1,73 +1,258 @@
-# Welcome to your Lovable project
+# WhatIf LabTwin
 
-## Project info
+A virtual laboratory simulation platform for engineering students to conduct experiments across multiple disciplines with interactive visualizations and AI-powered insights.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🎯 Overview
 
-## How can I edit this code?
+WhatIf LabTwin is a web-based platform that brings hands-on lab experiences to life. Students can access virtual engineering labs covering Electrical, Electronics, Mechanical, and Civil Engineering, performing complex experiments with real-time calculations and visualizations without needing physical equipment.
 
-There are several ways of editing your application.
+### Key Features
 
-**Use Lovable**
+- **Multi-Discipline Labs**: Access 25+ experiments across 4 engineering branches
+- **Interactive Experiments**: Adjust parameters using intuitive sliders and see real-time results
+- **What-If Scenarios**: Explore predefined scenarios to understand cause-and-effect relationships
+- **Real-Time Visualizations**: Animated diagrams, graphs, and data tables
+- **Progress Tracking**: Monitor completion status across labs and experiments
+- **AI-Powered Insights**: Get explanations and warnings based on calculated results
+- **Student Dashboard**: Centralized view of all available labs and personal progress
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## 🏗️ Supported Departments & Labs
 
-Changes made via Lovable will be committed automatically to this repo.
+### ⚡ Electrical Engineering (EEE)
+- **BEEE Lab** - 8 experiments
+  - Ohm's Law Verification
+  - Kirchhoff's Voltage Law (KVL)
+  - Kirchhoff's Current Law (KCL)
+  - Series & Parallel Configuration
+  - Power Measurement
+  - Superposition Theorem
 
-**Use your preferred IDE**
+### 📡 Electronics & Communication (ECE)
+- **Analog Electronics Lab** - 6 experiments
+  - Transistor CE Configuration
+  - Diode Characteristics
+  - Zener Regulator
+  - Half-Wave Rectifier
+  - CE Amplifier
+  - Rectifier Analysis
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### ⚙️ Mechanical Engineering (MECH)
+- **Material Testing Lab** - 7 experiments
+  - Tensile Test
+  - Hardness Testing (BHN)
+  - Impact Test
+  - Compression Test
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Fluid Mechanics & Hydraulics Lab** - 6 experiments
+  - Bernoulli's Theorem
+  - Reynolds Number Experiment
+  - Venturi Meter
+  - Pipe Friction Analysis
 
-Follow these steps:
+### 🏗️ Civil Engineering (CIVIL)
+- **Surveying Lab** - 8 experiments
+  - Chain Survey
+  - Compass Survey
+  - Leveling
+  - Plane Table Survey
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+- **Concrete Technology Lab** - 5 experiments
+  - Concrete Mix Design
+  - Slump Test
+  - Aggregate Grading
+  - Cube Strength Test
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd whatif_labtwin-main
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Preview Production Build
 
-## What technologies are used for this project?
+```bash
+npm run preview
+```
 
-This project is built with:
+## 📁 Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+whatif_labtwin-main/
+├── src/
+│   ├── components/
+│   │   ├── ui/              # shadcn/ui components
+│   │   ├── layout/          # Layout components
+│   │   ├── dashboard/       # Dashboard components
+│   │   └── experiment/      # Experiment-specific components
+│   ├── pages/               # Route pages
+│   ├── contexts/            # React contexts (Auth, etc.)
+│   ├── hooks/               # Custom React hooks
+│   ├── data/                # Static data (departments, experiments)
+│   ├── types/               # TypeScript type definitions
+│   ├── lib/                 # Utility functions
+│   ├── App.tsx              # Main app component
+│   └── main.tsx             # Entry point
+├── public/                  # Static assets
+├── package.json             # Dependencies
+├── vite.config.ts           # Vite configuration
+├── tailwind.config.ts       # Tailwind CSS configuration
+└── tsconfig.json            # TypeScript configuration
+```
 
-## How can I deploy this project?
+## 🛠️ Tech Stack
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- **Frontend Framework**: React 18
+- **Type Safety**: TypeScript
+- **Build Tool**: Vite 6
+- **UI Components**: shadcn/ui (Radix UI)
+- **Styling**: Tailwind CSS
+- **Routing**: React Router v6
+- **Form Handling**: React Hook Form + Zod
+- **State Management**: React Query + Context API
+- **Visualization**: Recharts
+- **Icons**: Lucide React
+- **Other**: Date-fns, Class Variance Authority, Sonner (toast notifications)
 
-## Can I connect a custom domain to my Lovable project?
+## 🔐 Authentication
 
-Yes, you can!
+The application includes a simple authentication system with:
+- Login page for existing students
+- Registration for new students
+- Department and year/semester selection
+- Progress tracking per student
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📊 Experiment Features
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Each experiment includes:
+
+1. **Parameters**: Adjustable input values with sliders
+2. **Real-time Calculations**: Instant results based on parameter values
+3. **Visualizations**: 
+   - Animated circuit/apparatus diagrams
+   - Characteristic graphs
+   - Data observation tables
+4. **What-If Scenarios**: Pre-defined parameter changes with expected outcomes
+5. **AI Insights**: Explanations of results and warnings for unsafe conditions
+6. **Demo Videos**: Optional video tutorials for each experiment
+
+## 📈 Progress Tracking
+
+Students can track their progress:
+- Experiment status: Not Started → In Progress → Completed
+- Lab completion percentage
+- Department-wise progress overview
+- Session persistence (data stored in browser context)
+
+## 🎨 Customization
+
+### Styling
+- Tailwind CSS configuration: `tailwind.config.ts`
+- Dark mode support via `next-themes`
+- Color scheme aligned to department identity
+
+### Adding New Experiments
+
+1. Add experiment data to `src/data/departments.ts`
+2. Create parameter definitions with units and ranges
+3. Add calculation logic to `src/pages/Experiment.tsx`
+4. (Optional) Create custom visualization components
+
+## 📦 Available Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Create production build
+npm run build:dev    # Build in development mode
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
+```
+
+## 🔗 Deployment
+
+This project can be deployed on:
+- Vercel (recommended)
+- Netlify
+- GitHub Pages
+- Any static hosting service
+
+Via Lovable platform:
+1. Visit your Lovable project dashboard
+2. Click Share → Publish
+3. Follow the deployment instructions
+
+To set up a custom domain:
+1. Navigate to Project Settings → Domains
+2. Click "Connect Domain"
+3. See [Lovable Custom Domain Documentation](https://docs.lovable.dev/features/custom-domain)
+
+## 🤝 Working Locally
+
+### IDE Setup
+
+**Using VS Code:**
+1. Clone the repository
+2. Open in VS Code
+3. Install recommended extensions
+4. Run `npm run dev` in terminal
+
+**Using GitHub Codespaces:**
+1. Navigate to repository main page
+2. Click "Code" button → "Codespaces" tab
+3. Click "New codespace"
+4. Edit directly and push changes
+
+**Direct GitHub Editing:**
+1. Navigate to file
+2. Click the edit (pencil) icon
+3. Make changes and commit
+
+## 📝 Git Workflow
+
+Changes made locally via IDE will be reflected in the Lovable platform automatically when pushed to the repository. Similarly, changes made through Lovable will be committed automatically.
+
+## ⚖️ License
+
+This project is built with [Lovable](https://lovable.dev) - a full-stack development platform.
+
+## 📞 Support & Feedback
+
+For issues or feature requests:
+- Create a GitHub issue in this repository
+- Provide detailed description of the problem
+- Include steps to reproduce (if applicable)
+
+## 🔄 Syncing Changes
+
+The repository is connected to Lovable. Any changes made through either platform will be synchronized:
+- **IDE Changes**: Push to GitHub → Auto-reflected in Lovable
+- **Lovable Changes**: Auto-committed to GitHub
+- **GitHub Web Editor**: Commit changes → Auto-reflected in Lovable
+
+---
+
+**Made with ❤️ for engineering students**
