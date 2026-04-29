@@ -255,4 +255,4 @@ The repository is connected to Lovable. Any changes made through either platform
 
 ---
 
-**Made with ❤️ for engineering students**
+**Made with ❤️ for those "late night engineers"**
